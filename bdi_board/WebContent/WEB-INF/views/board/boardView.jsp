@@ -28,7 +28,7 @@
 						<label class="control-label " for="bititle">제목</label>
 						<input class="form-control" id="bititle" name="bititle" type="text" disabled value="${bi.bititle}"/>
 					</div>
-					
+					 
 					<div class="form-group"> <!-- Message field -->
 						<label class="control-label " for="bitext">내용</label>
 						<textarea class="form-control" cols="40" id="bitext" name="bitext" rows="10" disabled>${bi.bitext}</textarea>

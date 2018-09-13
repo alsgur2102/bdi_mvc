@@ -1,9 +1,6 @@
 package com.board.bdi.vo;
 
 import java.io.Serializable;
-import java.util.Date;
-import java.util.HashSet;
-import java.util.Set;
 
 /**
  * 게시판 모델 클래스.
@@ -43,6 +40,20 @@ public class BoardInfoVO implements Serializable {
 	private Integer uinum;
 	
 	private String uiname;
+	
+	private PageInfo pi;
+	
+	public BoardInfoVO() {
+		pi = new PageInfo();
+	}
+
+	public PageInfo getPi() {
+		return pi;
+	}
+
+	public void setPi(PageInfo pi) {
+		this.pi = pi;
+	}
 
 	public String getUiname() {
 		return uiname;
