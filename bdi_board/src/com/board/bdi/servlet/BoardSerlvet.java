@@ -13,7 +13,7 @@ import javax.servlet.http.HttpServletResponse;
 import com.board.bdi.service.BoardService;
 import com.board.bdi.service.impl.BoardServiceImpl;
 
-@WebServlet("/board/*")
+@WebServlet(urlPatterns = {"/board/*","/comment/*"})	// urlPatterns => web.xml에 있는 servlet-mapping이 2개인것과 같음
 public class BoardSerlvet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 	private String uri;   
@@ -22,9 +22,14 @@ public class BoardSerlvet extends HttpServlet {
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		uri = "/views" + request.getRequestURI();
 		String cmd = uri.substring(uri.lastIndexOf("/")+1);
-		try {
+		try { 
 			if(cmd.equals("boardList")) {
 				bs.selectBoardList(request);
+			} else if(cmd.equals("boardView")) {
+				bs.selectBoard(request); 
+			} else if(cmd.equals("commentDelate")) {
+				bs.deleteComment(request);
+				uri = "/views/board/boardView?binum=" + request.getParameter("binum");
 			}
 		} catch(SQLException e) {
 			throw new ServletException("에러 : " + e.getMessage());
@@ -38,6 +43,9 @@ public class BoardSerlvet extends HttpServlet {
 		try {
 			if(cmd.equals("boardInsert")) {
 				bs.insertBoard(request);
+			}  else if(cmd.equals("commentInsert")) {
+				bs.insertComment(request);
+				uri = "/views/board/boardView?binum=" + request.getParameter("binum");
 			}
 		} catch(SQLException e) {
 			throw new ServletException("에러 : " + e.getMessage());

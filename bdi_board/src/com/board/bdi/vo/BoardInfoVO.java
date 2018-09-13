@@ -36,6 +36,21 @@ public class BoardInfoVO implements Serializable {
 
 	/** 게시판조회수. */
 	private Integer bicnt;
+	
+	/** 게시판활성여부. */
+	private Byte biactive;
+	
+	private Integer uinum;
+	
+	private String uiname;
+
+	public String getUiname() {
+		return uiname;
+	}
+
+	public void setUiname(String uiname) {
+		this.uiname = uiname;
+	}
 
 	@Override
 	public String toString() {
@@ -43,13 +58,6 @@ public class BoardInfoVO implements Serializable {
 				+ ", bicredat=" + bicredat + ", bimoddat=" + bimoddat + ", bicnt=" + bicnt + ", biactive=" + biactive
 				+ ", uinum=" + uinum + "]";
 	} 
-
-	/** 게시판활성여부. */
-	private Byte biactive;
-	
-	private Integer uinum;
-	
-	
 	
 	public Integer getUinum() {
 		return uinum;

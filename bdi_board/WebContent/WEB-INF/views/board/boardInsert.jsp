@@ -1,5 +1,11 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+<c:if test="${!empty cnt}">
+	<script>
+		alert("게시물이 정상적으로 동록되었습니다.");
+		location.href="/board/boardList";
+	</script>
+</c:if>
 <body>
         <article class="container">
             <div class="page-header">
@@ -29,7 +35,8 @@
 					</div>
 					
 					<div class="form-group">
-						<button class="btn btn-primary " name="submit" type="submit">Submit</button>
+						<button class="btn btn-primary " name="submit" type="submit">등록</button>
+						<button class="btn " data-page="/board/boardList">취소</button>
 					</div>
 					<input type="hidden" name="uinum" value="${user.uinum}">
 				</form>								

@@ -12,7 +12,7 @@
 					<th>게시자</th>
 				</tr>
 			</thead>
-			<tbody>
+			<tbody> 
 			<c:if test="${empty biList}">
 				<tr>
 					<td colspan="5">게시물이 없습니다.</td>
@@ -21,7 +21,7 @@
 			<c:forEach items="${biList}" var="bi">
 				<tr>
 					<td>${bi.binum}</td>
-					<td>${bi.bititle}</td>
+					<td><a href="/board/boardView?binum=${bi.binum}">${bi.bititle}</a></td>
 					<td>${bi.bicredat}</td>
 					<td>${bi.bicnt}</td>
 					<td>${bi.uinum}</td>
