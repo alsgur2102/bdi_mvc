@@ -20,14 +20,14 @@ public class BoardSerlvet extends HttpServlet {
 	private BoardService bs = new BoardServiceImpl();
 
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		uri = "/views" + request.getRequestURI();
+		uri = "/views" + request.getRequestURI();	// boardList -> "/views/board/boardList"
 		String cmd = uri.substring(uri.lastIndexOf("/")+1);
 		try { 
 			if(cmd.equals("boardList")) {
 				bs.selectBoardList(request);
 			} else if(cmd.equals("boardView")) {
 				bs.selectBoard(request); 
-			} else if(cmd.equals("commentDelate")) {
+			} else if(cmd.equals("commentDelete")) {
 				bs.deleteComment(request);
 				uri = "/views/board/boardView?binum=" + request.getParameter("binum");
 			}

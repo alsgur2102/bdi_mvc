@@ -52,7 +52,7 @@
 						<div class="form-group">
 							${ci.uiname} : ${ci.citext} [${ci.cicredat}] 
 							<c:if test="${ci.uinum eq user.uinum}">
-								<a href="/comment/commentDelate?cinum=${ci.cinum}&binum=${bi.binum}">x</a> 
+								<a href="/comment/commentDelete?cinum=${ci.cinum}&binum=${bi.binum}">x</a> 
 							</c:if>
 						</div>
 					</c:forEach>

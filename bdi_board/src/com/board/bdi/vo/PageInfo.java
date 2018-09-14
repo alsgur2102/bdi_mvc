@@ -2,15 +2,15 @@ package com.board.bdi.vo;
 
 public class PageInfo {
 	private Integer page = 1;
-	private Integer rowCnt = 10;
-	private Integer blockCnt = 10;
-	private Integer totalCnt;
-	private Integer limitFNum = 0;
-	private Integer limitLNum = 10;
-	private Integer totalPage;
-	private Integer totalBlock;
-	private Integer sBlock;
-	private Integer eBlock;
+	private Integer rowCnt = 10;	// 1페이지에 보여질 게시물 수
+	private Integer blockCnt = 10;	// 1페이지에 보여질 블락 수
+	private Integer totalCnt;	// 총 게시물 수
+	private Integer limitFNum = 0;	// 현재 보여질 게시물 시작번호
+	private Integer limitLNum = 10;	// 현재 보여질 게시물 시작부터 끝날때까지의 번호
+	private Integer totalPage;	// 총페이지
+	private Integer totalBlock;	// 총
+	private Integer sBlock;	// 시작하는 블럭의 개수
+	private Integer eBlock;	// 
 
 	public Integer getTotalPage() {
 		return totalPage;

@@ -18,7 +18,7 @@
 				</tr>
 			</thead>
 			<tbody>
-				<c:if test="${empty biList}">
+				<c:if test="${empty biList}">	// if else문이 아니다.
 					<tr>
 						<td colspan="5">게시물이 없습니다.</td>
 					</tr>

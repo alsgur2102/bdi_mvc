@@ -74,11 +74,11 @@ public class BoardServiceImpl implements BoardService {
 		BoardInfoVO bi = ParseUtil.parseRequest(req, BoardInfoVO.class);
 		bdao.setCon(DBCon.getCon());
 		try {
-			PageInfo pi = bi.getPi();
-			pi.setTotalCnt(bdao.countBoardList());
-			pi.pageCount();
+			PageInfo pi = bi.getPi();	// bi에서 pi의 정보를 받을 수 있게 함
+			pi.setTotalCnt(bdao.countBoardList());	// 총페이지 갯수
+			pi.pageCount();	
 			req.setAttribute("pi", pi);
-			req.setAttribute("biList", bdao.selectBoardList(bi));
+			req.setAttribute("biList", bdao.selectBoardList(bi));	// DAOImpl로 감
 		} catch(SQLException e) {
 			throw e;
 		} finally {
